@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{HelloWorld}}<br />
+      <span>Name : {{Name}}</span><br />
+      <span>get Hello World : {{getHelloWorld()}}</span><br />
+      <span>Simple JS code : {{Math.floor(Math.random()*10)}}</span><br />
+      <span>Array : {{SimpleArray[1]}}</span><br />
+    </div>
+  </body>
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      setup() {
+        const HelloWorld = "Hello World";
+        const Name = "Narasimha";
+        const SimpleArray = [1, 5, 2, 3];
+        const getHelloWorld = () => {
+          return HelloWorld.toUpperCase();
+        };
+        return {
+          HelloWorld,
+          Name,
+          getHelloWorld,
+          SimpleArray,
+        };
+      },
+    }).mount("#app");
+  </script>
+</html>
